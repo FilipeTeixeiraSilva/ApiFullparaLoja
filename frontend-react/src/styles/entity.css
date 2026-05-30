@@ -1,0 +1,112 @@
+/* =============================================
+   entity.css — estilos reutilizáveis para
+   páginas de CRUD (clientes, produtos, pedidos…)
+   ============================================= */
+
+.entity-page {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.entity-page h1 {
+  font-size: 1.8em;
+  margin-bottom: 50px;
+}
+
+.entity-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.entity-sidebar {
+  flex: 0 0 280px;
+  position: sticky;
+  top: 16px;
+}
+
+.entity-content {
+  flex: 1;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: none;
+}
+
+.entity-form {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.entity-form input:not([type="checkbox"]),
+.entity-form select,
+.entity-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95em;
+  font-family: inherit;
+  box-sizing: border-box;
+  background-color: inherit;
+  color: inherit;
+}
+
+.entity-form input:not([type="checkbox"]):focus,
+.entity-form select:focus,
+.entity-form textarea:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.entity-form-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.entity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entity-list-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.entity-list-item:last-child {
+  border-bottom: none;
+}
+
+.entity-list-item strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.entity-meta {
+  font-size: 0.8em;
+  opacity: 0.75;
+  margin: 2px 0;
+}
+
+.entity-item-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.entity-loading {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.entity-error {
+  color: crimson;
+  font-size: 0.9em;
+}

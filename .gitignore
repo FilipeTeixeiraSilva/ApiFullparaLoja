@@ -1,0 +1,20 @@
+# ─── Frontend ────────────────────────────────────────────
+frontend-react/node_modules/
+frontend-react/dist/
+frontend-react/.env
+frontend-react/.env.local
+
+# ─── Backend ─────────────────────────────────────────────
+backend-springboot/target/
+backend-springboot/src/main/resources/application.properties
+
+# ─── IDEs ────────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+*.suo
+*.user
+
+# ─── OS ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
