@@ -7,6 +7,7 @@ frontend-react/.env.local
 # ─── Backend ─────────────────────────────────────────────
 backend-springboot/target/
 backend-springboot/src/main/resources/application.properties
+backend-springboot/.env
 
 # ─── IDEs ────────────────────────────────────────────────
 .idea/
