@@ -86,6 +86,7 @@ Controller  →  Service  →  Repository  →  Entity (JPA)
 | MySQL Connector | — | Driver do banco de dados |
 | Lombok | — | Redução de boilerplate |
 | ModelMapper | 3.2.1 | Mapeamento DTO ↔ Entity |
+| spring-dotenv | 4.0.0 | Carregamento de variáveis de ambiente via `.env` |
 | Maven Wrapper | — | Build e gerenciamento de dependências |
 
 ### Frontend
@@ -145,7 +146,9 @@ ApiFullparaLoja/
 │   │       ├── ServiceOrderService.java
 │   │       └── FinancialService.java
 │   ├── src/main/resources/
-│   │   └── application.properties
+│   │   ├── application.properties          ← gerado localmente (git-ignored)
+│   │   └── application.properties.example  ← modelo comitado no repositório
+│   ├── .env                                ← credenciais locais (git-ignored)
 │   ├── pom.xml
 │   └── mvnw / mvnw.cmd
 │
@@ -189,15 +192,21 @@ CREATE DATABASE lojaDatabase;
 
 ### 2. Configurar credenciais do banco
 
-Edite o arquivo `backend-springboot/src/main/resources/application.properties`:
+Crie o arquivo `backend-springboot/.env` com suas credenciais locais (não é comitado no git):
 
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/lojaDatabase?useSSL=false&serverTimezone=UTC
-spring.datasource.username=root
-spring.datasource.password=SUA_SENHA_AQUI
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+```env
+DB_URL=jdbc:mysql://localhost:3306/lojaDatabase?useSSL=false&serverTimezone=UTC
+DB_USER=seu_usuario
+DB_PASSWORD=sua_senha
 ```
+
+Em seguida, copie o arquivo de exemplo para gerar o `application.properties`:
+
+```powershell
+cp backend-springboot/src/main/resources/application.properties.example backend-springboot/src/main/resources/application.properties
+```
+
+> A dependência **spring-dotenv** carrega o `.env` automaticamente ao subir a aplicação — nenhuma configuração extra necessária.
 
 ### 3. Instalar dependências do frontend
 
@@ -350,4 +359,5 @@ Base URL: `http://localhost:8080`
 - O CORS está configurado para aceitar requisições de `http://localhost:5173`
 - O schema do banco é gerado/atualizado automaticamente pelo Hibernate (`ddl-auto=update`)
 - Validações de entrada são aplicadas nos DTOs via Bean Validation (`@NotBlank`, `@Email`, etc.)
-- Nunca commite o `application.properties` com credenciais reais — utilize variáveis de ambiente em produção
+- As credenciais ficam em `backend-springboot/.env` (git-ignored) — nunca commite esse arquivo
+- O `application.properties` também é git-ignored; use `application.properties.example` como referência

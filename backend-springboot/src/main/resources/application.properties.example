@@ -1,9 +1,9 @@
 spring.application.name=api
 
-# Copie este arquivo para application.properties e preencha com suas credenciais locais
-spring.datasource.url=jdbc:mysql://localhost:3306/lojaDatabase?useSSL=false&serverTimezone=UTC
-spring.datasource.username=root
-spring.datasource.password=SUA_SENHA_AQUI
+# Copie este arquivo para application.properties e configure o .env com suas credenciais
+spring.datasource.url=${DB_URL}
+spring.datasource.username=${DB_USER}
+spring.datasource.password=${DB_PASSWORD}
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 spring.jpa.hibernate.ddl-auto=update
