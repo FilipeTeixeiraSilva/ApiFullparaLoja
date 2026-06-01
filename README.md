@@ -206,7 +206,7 @@ Em seguida, copie o arquivo de exemplo para gerar o `application.properties`:
 cp backend-springboot/src/main/resources/application.properties.example backend-springboot/src/main/resources/application.properties
 ```
 
-> O plugin **spring-dotenv** carrega o `.env` automaticamente ao subir a aplicação — nenhuma configuração extra necessária.
+> A dependência **spring-dotenv** carrega o `.env` automaticamente ao subir a aplicação — nenhuma configuração extra necessária.
 
 ### 3. Instalar dependências do frontend
 
