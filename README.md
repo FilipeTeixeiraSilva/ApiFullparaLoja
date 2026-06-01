@@ -203,8 +203,7 @@ DB_PASSWORD=sua_senha
 Em seguida, copie o arquivo de exemplo para gerar o `application.properties`:
 
 ```powershell
-cd backend-springboot/src/main/resources
-cp application.properties.example application.properties
+cp backend-springboot/src/main/resources/application.properties.example backend-springboot/src/main/resources/application.properties
 ```
 
 > O plugin **spring-dotenv** carrega o `.env` automaticamente ao subir a aplicação — nenhuma configuração extra necessária.
